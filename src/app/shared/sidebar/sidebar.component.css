@@ -1,0 +1,42 @@
+.left-sidebar {
+    width: 25%;
+    height: 100vh;
+}
+
+nav span {
+    display: none;
+}
+
+ul {
+    width: 100%;
+}
+
+ul li {
+    list-style: none;
+    text-align: center;
+    width: 100%;
+}
+
+ul li a {
+    text-decoration: none;
+    display: block;
+}
+
+.compact-sidebar {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .extend-sidebar {
+        display: none;
+    }
+    h4 {
+        display: none;
+    }
+    nav span {
+        display: block;
+    }
+    .compact-sidebar {
+        display: block;
+    }
+}

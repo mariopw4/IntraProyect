@@ -1,0 +1,16 @@
+.right-header {
+    width: 75%;
+}
+
+#nav-text {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    #dropdown {
+        display: none;
+    }
+    #nav-text {
+        display: inline;
+    }
+}

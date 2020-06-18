@@ -1,0 +1,17 @@
+<nav class="navbar d-flex justify-content-center align-items-center text-light">
+    <h4>IntraProyect <small>&copy;</small></h4>
+    <span><i class="fas fa-bars"></i></span>
+</nav>
+<ul class="mt-4 extend-sidebar">
+    <li *ngFor="let menu of menus" class="my-4">
+        <a href="#" class="text-light border-bottom" data-toggle="collapse" [attr.data-target]="'#'+menu.nombre">{{menu.nombre}} <i [ngClass]="menu.icon"></i><span class="badge badge-light float-right">{{menu.submenus.length}}</span></a>
+        <ul [id]="menu.nombre" class="collapse show">
+            <li class="my-2" *ngFor="let submenu of menu.submenus"><a href="#">{{submenu.nombre}}</a></li>
+        </ul>
+    </li>
+</ul>
+
+
+<div class="compact-sidebar text-center my-4" *ngFor="let menu of menus">
+    <a href="#"><i [ngClass]="menu.icon"></i></a>
+</div>
