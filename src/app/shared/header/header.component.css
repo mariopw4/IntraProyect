@@ -6,11 +6,40 @@
     display: none;
 }
 
+#nav-compact {
+    display: none;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.active {
+    color: white;
+}
+
+li {
+    list-style: none;
+    width: 100%;
+    display: block;
+}
+
+li a {
+    text-decoration: none;
+    display: block;
+}
+
 @media screen and (max-width: 768px) {
     #dropdown {
         display: none;
     }
     #nav-text {
         display: inline;
+    }
+    #nav-expand {
+        display: none !important;
+    }
+    #nav-compact {
+        display: flex;
     }
 }

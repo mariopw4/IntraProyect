@@ -1,21 +1,41 @@
-<nav class="navbar d-flex justify-content-end">
+<nav class="navbar d-flex justify-content-end" id="nav-expand">
     <h2 id="nav-text" class="text-center">IntraProyect</h2>
     <!-- Dropdown button -->
     <div id="dropdown" class="btn-group dropleft">
         <button type="button" class="btn btn-default shadow-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Mario Peralta Westreicher
+      {{_us.usuario.nombre}}
     </button>
         <!-- Dropdown card -->
         <div class="card" style="width: 18rem;" class="dropdown-menu">
             <div class="card-body text-center">
-                <img src="../../../assets/img/usuario.svg" class="img-fluid" height="40" width="40" alt="">
-                <p>Mario Peralta Westreicher <br> i201711909@cibertec.edu.pe</p>
+                <img src="../../../assets/img/usuario.png" class="img-fluid" height="40" width="40" alt="">
+                <p>{{_us.usuario.nombre}} <br> {{_us.usuario.email}}</p>
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-success">Perfil</button>
-                    <button type="button" class="btn btn-success">Notas</button>
-                    <button type="button" class="btn btn-success">Logout</button>
+                    <button type="button" routerLink="/perfil" class="btn btn-success">Perfil</button>
+                    <button type="button" routerLink="/notas" class="btn btn-success">Notas</button>
+                    <button type="button" (click)="_us.logout()" class="btn btn-success">Logout</button>
                 </div>
             </div>
         </div>
+    </div>
+</nav>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center" id="nav-compact">
+    <div class="text-center">
+        <h3 class="text-light">IntraProyect</h3>
+        <span class="text-light pointer" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"><i class="fas fa-bars"></i></span>
+    </div>
+
+
+    <div class="collapse navbar-collapse text-light" id="navbarSupportedContent">
+        <div class="text-center">
+            <li *ngFor="let menu of _sb.menus" class="my-4">
+                <a href="#" class="text-light border-bottom" data-toggle="collapse" [attr.data-target]="'#'+menu.nombre">{{menu.nombre}} <i [ngClass]="menu.icon"></i></a>
+                <div [id]="menu.nombre" class="collapse show">
+                    <li class="my-2" *ngFor="let submenu of menu.submenus"><a routerLinkActive="active" [routerLink]="submenu.url">{{submenu.nombre}}</a></li>
+                </div>
+            </li>
+        </div>
+
     </div>
 </nav>

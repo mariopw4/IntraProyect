@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SidebarService } from '../../services/sidebar/sidebar.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,26 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  menus = [
-    {
-      nombre:'Perfil', 
-      icon: 'fas fa-id-card',
-      submenus: [
-        {nombre: 'Editar'}
-      ]
-    },
-    {
-      nombre:'Dashboard', 
-      icon: 'fas fa-chart-bar',
-      submenus: [
-        {nombre: 'Notas'},
-        {nombre: 'Cursos'},
-        {nombre: 'Horario'}
-      ]
-    }
-  ]
-
-  constructor() { }
+  constructor(public _sb: SidebarService) { }
 
   ngOnInit(): void {
   }
